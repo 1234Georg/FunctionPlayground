@@ -14,7 +14,7 @@ using System.Linq;
 namespace FunctionPlayground
 {
     /*
-Details:
+Urls:
   Azure Resource Group: https://ms.portal.azure.com/#resource/subscriptions/d7feceb8-a7a2-43a6-884d-317219b9ea5b/resourceGroups/FunctionPlayground-dev-rg/overview
   Azure Storage: https://ms.portal.azure.com/#resource/subscriptions/d7feceb8-a7a2-43a6-884d-317219b9ea5b/resourceGroups/FunctionPlayground-dev-rg/providers/Microsoft.Storage/storageAccounts/functionplayground2
   Azure Function App: http://FunctionPlayground-dev-as.azurewebsites.net
