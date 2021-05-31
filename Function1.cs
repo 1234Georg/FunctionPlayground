@@ -14,13 +14,15 @@ using System.Linq;
 namespace FunctionPlayground
 {
     /*
-Urls:
-  Azure Resource Group: https://ms.portal.azure.com/#resource/subscriptions/d7feceb8-a7a2-43a6-884d-317219b9ea5b/resourceGroups/FunctionPlayground-dev-rg/overview
-  Azure Storage: https://ms.portal.azure.com/#resource/subscriptions/d7feceb8-a7a2-43a6-884d-317219b9ea5b/resourceGroups/FunctionPlayground-dev-rg/providers/Microsoft.Storage/storageAccounts/functionplayground2
-  Azure Function App: http://FunctionPlayground-dev-as.azurewebsites.net
-  Azure DevOps Project: FunctionPlayground (https://clt-57830401-33b2-4c94-b6b2-0ccd75eea17d.visualstudio.com/FunctionPlayground)
-  Azure DevOps build pipeline: https://clt-57830401-33b2-4c94-b6b2-0ccd75eea17d.visualstudio.com/051c7269-fe8d-4a84-b6a8-053695b87718/_build/definition?definitionId=1
-  Azure DevOps release pipeline: https://clt-57830401-33b2-4c94-b6b2-0ccd75eea17d.visualstudio.com/051c7269-fe8d-4a84-b6a8-053695b87718/_release?definitionId=1
+    Urls:
+      Azure Resource Group: https://ms.portal.azure.com/#resource/subscriptions/d7feceb8-a7a2-43a6-884d-317219b9ea5b/resourceGroups/FunctionPlayground-dev-rg/overview
+      Azure Storage: https://ms.portal.azure.com/#resource/subscriptions/d7feceb8-a7a2-43a6-884d-317219b9ea5b/resourceGroups/FunctionPlayground-dev-rg/providers/Microsoft.Storage/storageAccounts/functionplayground2
+      Azure Function App: http://FunctionPlayground-dev-as.azurewebsites.net
+      Azure DevOps Project: FunctionPlayground (https://clt-57830401-33b2-4c94-b6b2-0ccd75eea17d.visualstudio.com/FunctionPlayground)
+      Azure DevOps build pipeline: https://clt-57830401-33b2-4c94-b6b2-0ccd75eea17d.visualstudio.com/051c7269-fe8d-4a84-b6a8-053695b87718/_build/definition?definitionId=1
+      Azure DevOps release pipeline: https://clt-57830401-33b2-4c94-b6b2-0ccd75eea17d.visualstudio.com/051c7269-fe8d-4a84-b6a8-053695b87718/_release?definitionId=1
+      Link zur Function mit ID: http://functionplayground-dev-as.azurewebsites.net/api/2021q2/46671479
+      Link zur Function: http://functionplayground-dev-as.azurewebsites.net/api/2021q2
      */
     public static class Function1
     {
