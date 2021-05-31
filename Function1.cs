@@ -42,16 +42,45 @@ Urls:
                 {
                     var selected = from el in xmlDoc.Descendants()
                                    where (string)el.Attribute("V") == id
-                                   select el;
-                    result = selected.FirstOrDefault().ToString();
+                                   select new
+                                   {
+                                       Titel = el.Elements().Where(_ => _.Name.LocalName == "titel").Single().Attribute("V").Value,
+                                       Content = GetContent(el.Elements().Where(_ => _.Name.LocalName == "beschreibung").Single())
+                                   };
+
+                    result = $"<h3>{selected.FirstOrDefault().Titel}</h3>\n{selected.FirstOrDefault().Content}";
                 }
 
             }
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            string responseMessage = $"Quartal: {quartal}, id: {id}, \nresult: \n{result}";
 
-            return new OkObjectResult(responseMessage);
+            string responseMessage = @$"
+                <html>
+                <head>
+                    <meta charset='utf-8'/>
+                </head>
+                <body>
+                    Quartal: {quartal}, id: {id}, result: </br>
+                    {result}
+                </body>
+                </html>
+                ";
+            return new ContentResult { Content = responseMessage, ContentType = "text/html" };
+        }
+
+        private static string GetContent(XElement xElement)
+        {
+            if (!xElement.HasElements)
+                return $"<{xElement.Name.LocalName}>{xElement.Value}</{xElement.Name.LocalName}>";
+
+            string result = "";
+            foreach (var child in xElement.Elements())
+            {
+                result += GetContent(child) + "\n";
+            }
+            result = $"<{xElement.Name.LocalName}>{result}</{xElement.Name.LocalName}>";
+            return result;
         }
     }
 }
